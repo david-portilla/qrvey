@@ -1,0 +1,47 @@
+/*
+* Tools:
+* Globally used mixins and functions. It’s important not to output any CSS in
+* the first 2 layers.
+*/
+@import './tools/module.scss';
+
+
+/*
+* Objects:
+* Class-based selectors which define undecorated design patterns, for example
+* media object known from OOCSS
+*/
+@import './objects/module.scss';
+
+
+/*
+* Settings:
+* Used with preprocessors and contain font, colors definitions, etc.
+*/
+@import './settings/module.scss';
+
+
+
+/*
+* Generic:
+* reset and/or normalize styles, box-sizing definition, etc. This is the first
+* layer which generates actual CSS.
+*/
+@import './generic/module.scss';
+
+
+/*
+* Utilities:
+* Utilities and helper classes with ability to override anything which goes
+* before in the triangle, eg. hide helper class
+*/
+@import './utilities/module.scss';
+
+
+
+/*
+* Components:
+* specific UI components. This is where majority of our work takes place and
+* our UI components are often composed of Objects and Components
+*/
+@import './components/module.scss';
