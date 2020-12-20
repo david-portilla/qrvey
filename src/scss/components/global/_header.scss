@@ -1,0 +1,50 @@
+/**
+ * Header Component
+ */
+
+.c-header {
+  @extend %u-shadow-one;
+
+  background-color: color(black);
+  padding: 2rem 0;
+  // height: 20rem;
+
+  @include myBreakpoints(md) {
+    // height: 7.5rem;
+    padding: 3rem 0;
+    padding-bottom: 5rem;
+  }
+
+  &__title {
+    color: color(white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  &__search {
+    max-width: 70rem;
+    width: 100%;
+
+    //   margin-top: 5rem;
+    //   @include myBreakpoints(md) {
+    //   margin-top: 11.5rem;
+    // }
+
+    > input[type=text] {
+      border: none;
+      border-radius: 0.2rem;
+      color: color(gray);
+      padding: 0.4rem 0.8rem;
+      width: 100%;
+
+      @include myBreakpoints(md) {
+        padding: 0.8rem;
+      }
+
+      &::placeholder {
+        color: color(gray);
+      }
+    }
+  }
+}
