@@ -83,6 +83,9 @@ class Draw {
         if (this.data[k].region.toLowerCase().trim() === 'oceania') {
           this.Ocenania.push(this.data[k])
         }
+      } else {
+        // countries without region
+        console.log(`country without region; ${ this.data[k].name }`)
       }
     }
   }
@@ -225,7 +228,7 @@ class Draw {
 */
   getCountries (obj) {
     let countries = ''
-    if (obj.length > 1) {
+    if (obj.length > 0) {
       for (let j = 0;j < obj.length;j++) {
         countries += `${ obj[j] }, `
       }
