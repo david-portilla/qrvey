@@ -1,0 +1,77 @@
+/**
+ * List Component
+ */
+
+.c-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  position: relative;
+
+  @include myBreakpoints(md) {
+    margin-top: 4rem;
+  }
+
+  &__col {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding-right: 1.6rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include myBreakpoints(xs) {
+      flex: 0 0 calc(50% - 1.6rem);
+    }
+
+    @include myBreakpoints(md) {
+      flex: 0 0 calc(20% - 1.6rem);
+    }
+  }
+
+  &__region {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+
+    @include myBreakpoints(md) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__countries {
+    // list-style: none;
+
+    > li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__item {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.4rem 0;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: color(black);
+      color: color(white);
+    }
+
+    &-flag {
+      background-color: color(gray);
+      flex: 0 0 3.6rem;
+      height: 2.4rem;
+      margin-right: 0.6rem;
+    }
+  }
+}
