@@ -66,7 +66,7 @@ class Draw {
  */
   groupByRegion () {
     for (let k = 0;k < this.data.length;k++) {
-      if (this.data[k].region) {
+      if (this.data[k].region && this.data[k].name && this.data[k].flag) {
         // console.log(this.data[ k ].region.toLowerCase().trim())
         if (this.data[k].region.toLowerCase().trim() === 'africa') {
           this.Africa.push(this.data[k])
@@ -140,7 +140,7 @@ class Draw {
 */
   templateString (ctr) {
     let country = document.createElement('li')
-    if (ctr.name && ctr.flag && ctr.capital && ctr.population && ctr.currencies && ctr.languages && ctr.borders) {
+    if (ctr.name && ctr.flag) {
       country.innerHTML = `
       <a
         href="#"
