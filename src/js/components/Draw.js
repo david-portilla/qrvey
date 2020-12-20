@@ -1,5 +1,6 @@
 import {selectId, selectAll} from '../helpers'
 import Dialog from './Dialog'
+import Search from './Search'
 /**
 * Draw data component
 * @author David Portilla <david_portilla@hotmail.com>
@@ -46,6 +47,8 @@ class Draw {
         dialogEl: 'c-dialog',
         overlayEl: 'c-dialog__overlay'
       })
+      /* eslint-disable-next-line */
+      const searchBar = new Search()
       // let getCountryBtns = selectAll(".js-open-dialog");
       // // console.log(getDialogEl)
       // // console.log(getCountryBtns)

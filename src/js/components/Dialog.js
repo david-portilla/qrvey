@@ -1,5 +1,4 @@
 import {select, selectId} from '../helpers'
-
 class Dialog {
   constructor ({elems, dialogEl, overlayEl}) {
     // console.log('Dialog.js')
