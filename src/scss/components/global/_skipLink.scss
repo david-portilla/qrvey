@@ -7,11 +7,9 @@
   color: color(white) !important;
   font-weight: 700;
   padding: 0.5rem 1rem;
-  position: absolute;
   text-align: center;
   text-decoration: none;
-  top: -100%;
-  transition: all linear 0.25s;
+  width: 100%;
 
   @include myBreakpoints(md) {
     display: inline-block;
@@ -34,19 +32,18 @@
     background-color: color(black);
     border: 0.2rem inset color(white);
     color: color(white);
-    height: 100%;
+    display: block;
+    height: auto;
     margin: 0.2rem;
-    position: relative;
     text-decoration: underline;
-    top: 0;
-    transition: all linear 0.25s;
-    width: 100%;
+    width: auto;
     z-index: 9999;
 
     @include myBreakpoints(md) {
       left: 0.3rem;
       position: absolute;
       top: 0.3rem;
+      transition: top 0.2s linear;
     }
   }
 }
