@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qrvey | FE test</title>
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
 <body>
@@ -218,20 +219,63 @@
 
   <div class="c-dialog" role="dialog" aria-hidden="true" aria-labelledby="dialog-title"
     aria-describedby="dialog-description">
+
+    <p id="dialog-description" class="sr-only">Information about the Country</p>
+
     <div class="c-dialog__container">
-      <h1 id="dialog-title" class="c-dialog__container-heading">Hello modal 😃</h1>
-      <p id="dialog-description" class="sr-only">Description goes here</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis et felis ut commodo. Duis scelerisque
-        dui eu volutpat tempor. Sed quis sodales massa, vel vehicula felis.</p>
-      <a href="/">Focusable Item #1</a>
-      <p>Elit id lacus euismod nam arcu rhoncus mi augue feugiat vestibulum volutpat ipsum consequat risus ultricies
-        phasellus tempor non mus. <button>Focusable Item #2 </button> </p>
-      <a href="/">Focusable Item #3</a>
-      <p>Vestibulum cursus urna sed arcu consequat bibendum. Donec quis sem id massa faucibus lobortis ac non velit.
-        Integer diam nisi, tincidunt vitae ultrices nec, maximus non tortor.</p>
-      <button type="button" class="js-close-dialog" aria-label="Close Navigation" class="c-dialog__close"> Close
-        dialog<i class="fa fa-times"></i>
+      <button type="button" class="c-dialog__close js-close-dialog" aria-label="Close Navigation"
+        class="c-dialog__close">
+        <i class="fa fa-times"></i>
       </button>
+
+      <div class="c-country">
+        <div class="c-country__info">
+
+          <div class="c-country__heading">
+            <h1 id="country-name" class="c-country__heading-title">Colombia</h1>
+            <button type="button" class="c-country__heading-favorite js-set-favorite" class="c-dialog__favorite">
+              <i class="fas fa-star"></i>
+            </button>
+          </div>
+
+          <ul class="c-country__list">
+            <li>
+              <p class="c-country__text">Region:
+                <span id="country-region">America</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Population:
+                <span id="country-population">50M</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Capital:
+                <span id="country-capital">Bogota</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Currency:
+                <span id="country-currency">Peso Colombiano</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">
+                <span> Language:</span>
+                <span id="country-language">Espanol</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Border Countries:
+                <span id="country-border" class="bold">Brasil, Ecuador, Panama, Peru,etc</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="c-country__flag u-bgimg-cover-ctr" style="background-image: url(https://picsum.photos/300/300)">
+        </div>
+      </div>
+
     </div>
   </div>
   <div class="c-dialog__overlay" tabindex="-1" aria-hidden="true"></div>
