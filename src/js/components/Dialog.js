@@ -1,4 +1,4 @@
-import {select} from '../helpers'
+import {select, selectId} from '../helpers'
 
 class Dialog {
   constructor ({elems, dialogEl, overlayEl}) {
@@ -6,6 +6,15 @@ class Dialog {
     this.dialogEls = elems
     this.dialogEl = select(`.${ dialogEl }`)
     this.overlayEl = select(`.${ overlayEl }`)
+    this.cname = selectId('country-name')
+    this.cregion = selectId('country-region')
+    this.cflag = selectId('country-flag')
+    this.cpopulation = selectId('country-population')
+    this.ccapital = selectId('country-capital')
+    this.ccurrency = selectId('country-currency')
+    this.clanguage = selectId('country-language')
+    this.cborder = selectId('country-border')
+
 
     let focusableEls = this.dialogEl.querySelectorAll(
       'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
@@ -16,9 +25,9 @@ class Dialog {
 
     // bind methods
     this.init = this.init.bind(this)
-    // this.addEventListeners = this.addEventListeners.bind(this);
     this.open = this.open.bind(this)
     this.close = this.close.bind(this)
+    this.getCountryNames = this.getCountryNames.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.handleBackwardTab = this.handleBackwardTab.bind(this)
     this.handleForwardTab = this.handleForwardTab.bind(this)
@@ -37,6 +46,7 @@ class Dialog {
     this.dialogEls.forEach(country => {
       country.addEventListener('click', function(e) {
         e.preventDefault()
+        Dialog.setInfo(this)
         Dialog.open()
         this.closeBtn = select('.js-close-dialog')
         this.closeBtn.addEventListener('click', Dialog.close)
@@ -75,6 +85,29 @@ class Dialog {
     this.dialogEl.setAttribute('aria-hidden', 'true')
     this.overlayEl.setAttribute('aria-hidden', 'true')
     this.focusedElBeforeOpen.focus()
+  }
+
+  setInfo (obj) {
+    console.log(obj.dataset.population)
+    this.cname.innerHTML = obj.dataset.name
+    this.cregion.innerHTML = obj.dataset.region
+    this.cpopulation.innerHTML = obj.dataset.population
+    this.ccapital.innerHTML = obj.dataset.capital
+    this.ccurrency.innerHTML = obj.dataset.currency
+    this.clanguage.innerHTML = obj.dataset.languages
+    if (obj.dataset.borders.trim() !== 'undefined') {
+      this.cborder.innerHTML = obj.dataset.borders
+      // TODO
+      // Fetch long name
+      this.getCountryNames(obj.dataset.borders)
+    } else {
+      this.cborder.innerHTML = 'no border countries'
+    }
+    this.cflag.style.backgroundImage = `url(${ obj.dataset.flag })`
+  }
+
+  async getCountryNames (str) {
+    console.log('getnames', str.split(','))
   }
 
   handleKeyDown (e) {
