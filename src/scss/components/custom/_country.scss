@@ -14,6 +14,8 @@
   }
 
   &__flag {
+    @extend %u-shadow-one;
+
     flex: 0 0 15rem;
     height: 10rem;
   }
