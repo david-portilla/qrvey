@@ -29,7 +29,7 @@
   &__container {
     @extend %u-shadow-one;
 
-    background-color: #fff;
+    background-color: color(white);
     border-radius: 0.5rem;
     padding: 4rem;
     width: 100%;
@@ -40,7 +40,7 @@
   }
 
   &__overlay {
-    background-color: rgba(#4c3666, 0.35);
+    background-color: rgba(color(purple), 0.35);
     height: 100vh;
     left: 0;
     position: fixed;
@@ -50,10 +50,10 @@
 
   &__close {
     align-items: center;
-    background-color: #4c3666;
+    background-color: color(purple);
     border: none;
     border-radius: 0.5rem;
-    color: #fff;
+    color: color(white);
     cursor: pointer;
     display: inline-flex;
     font-size: 2rem;
@@ -69,8 +69,8 @@
 
     &:hover,
     &:focus {
-      background-color: #3c1666;
-      color: #fff;
+      background-color: color(purple);
+      color: color(white);
     }
   }
 }
