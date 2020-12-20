@@ -1,0 +1,76 @@
+/**
+ * Dialog Component
+ */
+
+[aria-hidden='true'] {
+  display: none;
+}
+
+.c-dialog {
+  background-color: transparent;
+  margin: 0;
+  padding: 2rem;
+  position: absolute;
+  top: 25rem;
+  width: 100%;
+  z-index: 5;
+
+  @include myBreakpoints(md) {
+    left: calc(50% - 40rem);
+    max-width: 80rem;
+  }
+
+  &[aria-hidden='false'] {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container {
+    @extend %u-shadow-one;
+
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 4rem;
+    width: 100%;
+
+    @include myBreakpoints(xs) {
+      padding: 6rem;
+    }
+  }
+
+  &__overlay {
+    background-color: rgba(#4c3666, 0.35);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &__close {
+    align-items: center;
+    background-color: #4c3666;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 4rem;
+    justify-content: center;
+    padding: 0.5rem;
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    transition: all linear 0.25s;
+    width: 4rem;
+
+    &:hover,
+    &:focus {
+      background-color: #3c1666;
+      color: #fff;
+    }
+  }
+}
