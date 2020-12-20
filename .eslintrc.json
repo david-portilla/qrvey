@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": ["standard"],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "import/no-unresolved": [2, { "ignore": ["^@/"] }],
+    "template-curly-spacing": [2, "always"],
+    "semi-spacing": [2, {"before": false, "after": false}]
+  }
+}
