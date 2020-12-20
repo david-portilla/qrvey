@@ -146,6 +146,9 @@ class Draw {
         href="#"
         class="c-list__item js-open-dialog"
         id="${ ctr.name }"
+        data-name="${ ctr.name }"
+        data-region="${ ctr.region }"
+        data-flag="${ ctr.flag }"
         data-capital="${ ctr.capital }"
         data-population="${ this.roundPopulation(ctr.population) }"
         data-currency="${ this.getCurrencies(ctr.currencies) }"
@@ -190,10 +193,10 @@ class Draw {
       }
       // remove last ', ' from multiple currencies
       if (currency.slice(-1) === ' ') {
-        currency = `Currencies: ${ currency.slice(0, -2) }`
+        currency = `${ currency.slice(0, -2) }`
       }
     } else {
-      currency = `Currency: ${ obj[0].name } `
+      currency = `${ obj[0].name } `
     }
     return currency
   }
@@ -213,10 +216,10 @@ class Draw {
       }
       // remove last ', ' from multiple lenguages
       if (lenguages.slice(-1) === ' ') {
-        lenguages = `Lenguages: ${ lenguages.slice(0, -2) }`
+        lenguages = `${ lenguages.slice(0, -2) }`
       }
     } else {
-      lenguages = `Lenguage: ${ obj[0].name } `
+      lenguages = `${ obj[0].name } `
     }
     return lenguages
   }
@@ -234,10 +237,10 @@ class Draw {
       }
       // remove last ',' from multiple countries
       if (countries.slice(-1) === ' ') {
-        countries = `countries: ${ countries.slice(0, -2) }`
+        countries = `${ countries.slice(0, -2) }`
       }
     } else {
-      countries = `countries: ${ obj[0] } `
+      countries = `${ obj[0] } `
     }
     return countries
   }
