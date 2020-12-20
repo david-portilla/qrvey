@@ -3,5 +3,12 @@
  */
 
 .c-footer {
-  border: 0.1rem solid red;
+  background-color: color(black);
+  color: color(white);
+  padding: 0.5rem 0;
+  text-align: center;
+
+  a {
+    color: color(white);
+  }
 }
