@@ -1,0 +1,12 @@
+// Mixin Tools
+
+// Generate a solid class (for use in markup) and a silent class (for use with
+// `@extend`) in one go.
+@mixin class($name) {
+  %#{$name} {
+    @content;
+  }
+  .#{$name} {
+    @content;
+  }
+}

@@ -1,0 +1,21 @@
+/*
+* Colors
+* Define colors in the $color map, and grab them using the function
+* i.e. background-color: color(yellow);
+*/
+
+$colors: (
+  white: #fff,
+  black: #373737,
+  gray: #666,
+  blue: #4fbdff,
+  red: #e9161c
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn 'That color is not defined: \'#{$key}\'';
+}

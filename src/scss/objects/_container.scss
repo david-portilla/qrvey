@@ -1,0 +1,16 @@
+.o-container {
+  // border: 0.1rem solid red;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+
+  @include myBreakpoints(md) {
+    max-width: 120rem;
+    // border: 0.2rem solid blue;
+    padding: 0 3.2rem;
+  }
+
+  @include myBreakpoints(lg) {
+    // border: 0.2rem solid lime;
+    max-width: 140rem;
+  }
+}

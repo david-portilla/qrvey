@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.4rem 0 rgba(233, 22, 28, 0.5);
+    outline: color(red) auto 0.2rem;
+  }
+}
+
+html {
+  // A font-size of 62.5% will create a base font-size of 10px in most cases
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  color: color(black);
+  display: flex;
+  flex-direction: column;
+  // font: 400 1.6rem/2 $lato;
+  font: 400 1.6rem/2 Arial, Helvetica, sans-serif;
+  height: 100%;
+  letter-spacing: 0.03rem;
+  letter-spacing: 0.025rem;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: color(black);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.025rem;
+  line-height: 1.75;
+  text-decoration: underline;
+  transition: all linear 0.25s;
+
+  &:hover,
+  &:focus {
+    color: color(blue);
+    text-decoration: underline;
+    transition: all linear 0.25s;
+  }
+}
