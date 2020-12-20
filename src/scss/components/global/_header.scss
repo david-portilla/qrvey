@@ -7,10 +7,23 @@
 
   background-color: color(purple);
   padding: 2rem 0;
+  position: fixed;
+  transition: all linear 0.25s;
+  width: 100%;
+  z-index: 10;
 
   @include myBreakpoints(md) {
     padding: 3rem 0;
     padding-bottom: 5rem;
+  }
+
+  + main {
+    overflow: hidden;
+    padding-top: 12.2rem;
+
+    @include myBreakpoints(md) {
+      padding-top: 16.2rem;
+    }
   }
 
   &__title {
@@ -29,11 +42,8 @@
       border-radius: 0.2rem;
       color: color(gray);
       padding: 0.4rem 0.8rem;
+      padding: 0.8rem;
       width: 100%;
-
-      @include myBreakpoints(md) {
-        padding: 0.8rem;
-      }
 
       &::placeholder {
         color: color(gray);
