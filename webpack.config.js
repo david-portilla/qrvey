@@ -72,7 +72,7 @@ module.exports = {
     // index.html dist file
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      favicon: 'src/favicon.ico'
+      favicon: 'src/favicon.svg'
     }),
     // index.css dist file
     new MiniCSSExtractPlugin({
