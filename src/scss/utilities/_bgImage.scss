@@ -1,0 +1,12 @@
+// Background Image Utility
+@include class(u-bgimg-contain-ctr) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@include class(u-bgimg-cover-ctr) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

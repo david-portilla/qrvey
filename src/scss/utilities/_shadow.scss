@@ -1,0 +1,10 @@
+// Shadows Utility
+
+// if you need to @extend, use placeholder classes (i.e. %u-shadow-one )
+@include class(u-shadow-one) {
+  box-shadow: 0.2rem 0.2rem 2rem 0 rgba(66, 127, 164, 0.22);
+}
+
+.u-shadow-one {
+  box-shadow: 0.2rem 0.2rem 2rem 0 rgba(66, 127, 164, 0.22);
+}
