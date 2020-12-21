@@ -46,11 +46,10 @@
   &__countries {
     list-style: none;
 
-    > li {
+    li {
       margin-bottom: 0.5rem;
 
       &.hide {
-        background-color: pink;
         display: none;
       }
     }
@@ -77,6 +76,19 @@
       flex: 0 0 3.6rem;
       height: 2.4rem;
       margin-right: 0.6rem;
+    }
+
+    &-name {
+      background-color: color(graylight);
+      color: color(graylight);
+      width: 100%;
+    }
+
+    &.js-open-dialog {
+      span {
+        background-color: transparent;
+        color: color(black);
+      }
     }
   }
 }
