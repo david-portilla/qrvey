@@ -1,7 +1,9 @@
 import {select, selectId} from '../helpers'
 class Dialog {
+  /**
+* Constructor method
+*/
   constructor ({elems, dialogEl, overlayEl}) {
-    // console.log('Dialog.js')
     this.dialogEls = elems
     this.dialogEl = select(`.${ dialogEl }`)
     this.overlayEl = select(`.${ overlayEl }`)
@@ -13,53 +15,51 @@ class Dialog {
     this.ccurrency = selectId('country-currency')
     this.clanguage = selectId('country-language')
     this.cborder = selectId('country-border')
-
-
+    this.ccountryFavorite = selectId('country-favorite')
     let focusableEls = this.dialogEl.querySelectorAll(
       'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
     )
     this.focusableEls = Array.prototype.slice.call(focusableEls)
     this.firstFocusableEl = focusableEls[0]
     this.lastFocusableEl = this.focusableEls[this.focusableEls.length - 1]
-
     // bind methods
     this.init = this.init.bind(this)
     this.open = this.open.bind(this)
     this.close = this.close.bind(this)
     this.getCountryNames = this.getCountryNames.bind(this)
+    this.setFavorite = this.setFavorite.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.handleBackwardTab = this.handleBackwardTab.bind(this)
     this.handleForwardTab = this.handleForwardTab.bind(this)
-
-    // // return
-    // if (!this.dialogEl || !this.overlayEl) {
-    //   console.log("Dialog Error: missing dialog container or overlay element");
-    //   return;
-    // }
+    if (!this.dialogEl || !this.overlayEl) {
+      console.log('Dialog Error: missing dialog container or overlay element')
+      return
+    }
     this.init()
   }
 
+  /**
+* Initialize method
+*/
   init () {
-    // console.log('init')
     let Dialog = this
-    this.dialogEls.forEach(country => {
+    Dialog.dialogEls.forEach(country => {
       country.addEventListener('click', function(e) {
         e.preventDefault()
         Dialog.setInfo(this)
         Dialog.open()
         this.closeBtn = select('.js-close-dialog')
         this.closeBtn.addEventListener('click', Dialog.close)
+        /* eslint-disable-next-line */
+        localStorage.getItem(this.id) && Dialog.ccountryFavorite.classList.add('is-favorite')
       })
     })
-  }
 
-  // addEventListeners (openDialog, closeDialog) {
-  //   this.openBtn = openDialog
-  //   this.closeBtn = select(closeDialog);
-  //   this.openBtn.addEventListener("click", this.open);
-  //   this.closeBtn.addEventListener("click", this.close);
-  //   console.log(this.openBtn, this.closeBtn)
-  // }
+    Dialog.ccountryFavorite.addEventListener('click', function(e) {
+      e.preventDefault()
+      Dialog.setFavorite(this)
+    })
+  }
 
   open () {
     // console.log('open()')
@@ -83,11 +83,11 @@ class Dialog {
     select('body').classList.remove('u-noscroll')
     this.dialogEl.setAttribute('aria-hidden', 'true')
     this.overlayEl.setAttribute('aria-hidden', 'true')
+    this.ccountryFavorite.classList.remove('is-favorite')
     this.focusedElBeforeOpen.focus()
   }
 
   setInfo (obj) {
-    console.log(obj.dataset.population)
     this.cname.innerHTML = obj.dataset.name
     this.cregion.innerHTML = obj.dataset.region
     this.cpopulation.innerHTML = obj.dataset.population
@@ -103,10 +103,21 @@ class Dialog {
       this.cborder.innerHTML = 'no border countries'
     }
     this.cflag.style.backgroundImage = `url(${ obj.dataset.flag })`
+    this.ccountryFavorite.dataset.favorite = `${ obj.dataset.name }`
   }
 
-  async getCountryNames (str) {
-    console.log('getnames', str.split(','))
+  setFavorite (btn) {
+    /* eslint-disable */
+    let isFavorite = localStorage.getItem(btn.dataset.favorite)
+    if (isFavorite === null) {
+      localStorage.setItem(btn.dataset.favorite, true)
+      btn.classList.add('is-favorite')
+    }
+    if (isFavorite) {
+      localStorage.removeItem(btn.dataset.favorite)
+      btn.classList.remove('is-favorite')
+    }
+    /* eslint-eneable */
   }
 
   handleKeyDown (e) {
@@ -150,6 +161,14 @@ class Dialog {
       e.preventDefault()
       this.firstFocusableEl.focus()
     }
+  }
+
+  /**
+* @todo Implement this function.
+* @todo Get the full name of border countries.
+*/
+  async getCountryNames (str) {
+    console.log('getnames', str.split(','))
   }
 }
 
