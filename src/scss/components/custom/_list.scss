@@ -46,15 +46,28 @@
   &__countries {
     list-style: none;
 
+    &.is-empty {
+      > li.is-empty {
+        display: block;
+      }
+    }
+
     li {
       margin-bottom: 0.5rem;
+
+      &:nth-child(odd) {
+        background-color: color(graylight);
+      }
 
       &.hide {
         display: none;
       }
 
-      &:nth-child(odd) {
+      &.is-empty {
         background-color: color(graylight);
+        display: none;
+        font-style: italic;
+        padding: 0 0.5rem;
       }
     }
   }

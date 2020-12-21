@@ -30,6 +30,7 @@ class Draw {
     this.getLanguages = this.getLanguages.bind(this)
     this.getCountries = this.getCountries.bind(this)
     this.templateString = this.templateString.bind(this)
+    this.emptyItem = this.emptyItem.bind(this)
     this.init()
   }
 
@@ -74,7 +75,7 @@ class Draw {
         }
       } else {
         // countries without region
-        console.log(`country without region; ${ this.data[k].name }`)
+        console.log(`Country without region: ${ this.data[k].name }`)
       }
     }
   }
@@ -88,6 +89,7 @@ class Draw {
       this.Africa.forEach(ctr => {
         selectId('africa').appendChild(this.templateString(ctr))
       })
+      selectId('africa').appendChild(this.emptyItem())
     }
 
     if (selectId('americas')) {
@@ -95,6 +97,7 @@ class Draw {
       this.America.forEach(ctr =>
         selectId('americas').appendChild(this.templateString(ctr))
       )
+      selectId('americas').appendChild(this.emptyItem())
     }
 
     if (selectId('asia')) {
@@ -102,6 +105,7 @@ class Draw {
       this.Asia.forEach(ctr => {
         selectId('asia').appendChild(this.templateString(ctr))
       })
+      selectId('asia').appendChild(this.emptyItem())
     }
 
     if (selectId('europe')) {
@@ -109,6 +113,7 @@ class Draw {
       this.Europa.forEach(ctr => {
         selectId('europe').appendChild(this.templateString(ctr))
       })
+      selectId('europe').appendChild(this.emptyItem())
     }
 
     if (selectId('oceania')) {
@@ -116,6 +121,7 @@ class Draw {
       this.Ocenania.forEach(ctr => {
         selectId('oceania').appendChild(this.templateString(ctr))
       })
+      selectId('oceania').appendChild(this.emptyItem())
     }
 
     let getAllDialogEls = selectAll('.js-open-dialog')
@@ -150,6 +156,13 @@ class Draw {
       `
     }
     return country
+  }
+
+  emptyItem () {
+    let emptyItem = document.createElement('li')
+    emptyItem.classList.add('is-empty')
+    emptyItem.innerHTML = `No country for this search`
+    return emptyItem
   }
 
   /**
