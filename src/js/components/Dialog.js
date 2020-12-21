@@ -76,6 +76,10 @@ class Dialog {
   open () {
     // console.log('open()')
     select('body').classList.add('u-noscroll')
+    selectId('main-content').setAttribute('aria-hidden', 'true')
+    select('.c-header').setAttribute('aria-hidden', 'true')
+    select('.c-footer').setAttribute('aria-hidden', 'true')
+    select('.c-skiplink').setAttribute('aria-hidden', 'true')
     this.focusedElBeforeOpen = document.activeElement
     this.dialogEl.setAttribute('aria-hidden', 'false')
     this.overlayEl.setAttribute('aria-hidden', 'false')
@@ -96,6 +100,10 @@ class Dialog {
   close () {
     // console.log('close()')
     select('body').classList.remove('u-noscroll')
+    selectId('main-content').setAttribute('aria-hidden', 'false')
+    select('.c-header').setAttribute('aria-hidden', 'false')
+    select('.c-footer').setAttribute('aria-hidden', 'false')
+    select('.c-skiplink').setAttribute('aria-hidden', 'false')
     this.dialogEl.setAttribute('aria-hidden', 'true')
     this.overlayEl.setAttribute('aria-hidden', 'true')
     this.ccountryFavorite.classList.remove('is-favorite')

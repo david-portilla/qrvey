@@ -2,11 +2,11 @@
  * Dialog Component
  */
 
-[aria-hidden='true'] {
-  display: none;
-}
-
 .c-dialog {
+  &[aria-hidden='true'] {
+    display: none;
+  }
+
   background-color: transparent;
   margin: 0;
   padding: 2rem;
@@ -46,6 +46,10 @@
     position: fixed;
     width: 100%;
     z-index: 5;
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
   }
 
   &__close {
