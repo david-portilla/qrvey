@@ -1,7 +1,7 @@
 import {select, selectId} from '../helpers'
 
 /**
-* Draw data component
+* Dialog modal component
 * @author David Portilla <david_portilla@hotmail.com>
 */
 class Dialog {
