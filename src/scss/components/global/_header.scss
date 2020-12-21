@@ -53,11 +53,11 @@
 
     &-btn {
       -webkit-appearance: none;
-      // cursor: pointer;
-      // pointer-events: none;
-
       background-color: transparent;
       border: none;
+      // cursor: pointer;
+      // pointer-events: none;
+      display: flex;
       padding: 0.7rem;
       position: absolute;
       right: 0.2rem;
