@@ -14,7 +14,6 @@
 
   @include myBreakpoints(md) {
     padding: 3rem 0;
-    padding-bottom: 5rem;
   }
 
   + main {
@@ -34,6 +33,7 @@
   }
 
   &__search {
+    margin-bottom: 1rem;
     max-width: 70rem;
     position: relative;
     width: 100%;
@@ -68,6 +68,57 @@
         color: color(gray);
         opacity: 0.5;
       }
+    }
+  }
+
+  &__favorites {
+    @extend %u-shadow-one;
+
+    -webkit-appearance: none;
+    background-color: color(white);
+    border: none;
+    border-radius: 0.3rem;
+    color: color(purple);
+    cursor: pointer;
+    display: none;
+    font-weight: 900;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all linear 0.25s;
+
+    &:hover {
+      background-color: color(graylight);
+      transition: all linear 0.25s;
+
+      > i {
+        color: color(purple);
+        transition: all linear 0.25s;
+      }
+    }
+
+    &.show {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &.is-active {
+      background-color: color(purple);
+      color: color(white);
+      outline: 0.2rem solid color(yellow);
+
+      &:hover {
+        color: color(white);
+
+        > i {
+          color: color(white);
+        }
+      }
+    }
+
+    > i {
+      color: color(yellow);
+      margin-left: 0.5rem;
+      transition: all linear 0.25s;
     }
   }
 }

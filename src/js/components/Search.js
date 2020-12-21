@@ -10,12 +10,16 @@ class Search {
   constructor () {
     this.searchBar = selectId('get-country')
     // this.searchBtn = selectId('submitBtn')
+    this.favoriteBtn = selectId('show-favorites')
     this.listItems = selectAll('.c-list__item')
     this.listCountries = selectAll('.c-list__countries')
+    this.storedItems = {...localStorage};
     // bind methods
     this.init = this.init.bind(this)
     this.showOnlyActiveRegion = this.showOnlyActiveRegion.bind(this)
     this.filterData = this.filterData.bind(this)
+    this.checkIfFavorite = this.checkIfFavorite.bind(this)
+    this.showOnlyFavorites = this.showOnlyFavorites.bind(this)
     // this.filterOnSubmit = this.filterOnSubmit.bind(this)
     this.init()
   }
@@ -26,7 +30,13 @@ class Search {
   init () {
     this.searchBar.addEventListener('input', (e) => {
       this.filterData(e.target.value)
+      this.favoriteBtn.classList.remove('is-active')
+      this.favoriteBtn.firstElementChild.innerHTML = `Show only`
       this.showOnlyActiveRegion()
+    })
+    this.checkIfFavorite()
+    this.favoriteBtn.addEventListener('click', (e) => {
+      this.showOnlyFavorites(e)
     })
   }
 
@@ -57,6 +67,45 @@ class Search {
         regions.classList.remove('is-empty')
       }
     })
+  }
+
+  /**
+* Verify if favorites were set previously
+*/
+  checkIfFavorite () {
+    if (Object.keys(localStorage).length > 1) {
+      Object.keys(localStorage).forEach(id => {
+        if (id === 'Qrvey') {
+          this.favoriteBtn.classList.add('show')
+        }
+      })
+    }
+  }
+
+  /**
+* Show only favorite ones
+*/
+  showOnlyFavorites () {
+    this.favoriteBtn.classList.toggle('is-active')
+    if (this.favoriteBtn.classList.contains('is-active')) {
+      this.favoriteBtn.firstElementChild.innerHTML = `Showing only`
+      this.listItems.forEach(item => {
+        item.parentElement.classList.add('hide')
+      })
+      // compare with favorites
+      let favorites = Object.keys(localStorage)
+      favorites.forEach(id => {
+        if (selectId(id)) {
+          let currentFav = selectId(id)
+          currentFav.parentElement.classList.remove('hide')
+        }
+      })
+    } else {
+      this.favoriteBtn.firstElementChild.innerHTML = `Show only`
+      this.listItems.forEach(item => {
+        item.parentElement.classList.remove('hide')
+      })
+    }
   }
 
   // /**

@@ -15,6 +15,7 @@ class Dialog {
     this.dialogEls = elems
     this.dialogEl = select(`.${ dialogEl }`)
     this.overlayEl = select(`.${ overlayEl }`)
+    this.favoriteBtn = selectId('show-favorites')
     this.cname = selectId('country-name')
     this.cregion = selectId('country-region')
     this.cflag = selectId('country-flag')
@@ -133,7 +134,9 @@ class Dialog {
     let isFavorite = localStorage.getItem(btn.dataset.favorite)
     if (isFavorite === null) {
       localStorage.setItem(btn.dataset.favorite, true)
+      localStorage.setItem('Qrvey', true)
       btn.classList.add('is-favorite')
+      this.favoriteBtn.classList.add('show')
     }
     if (isFavorite) {
       localStorage.removeItem(btn.dataset.favorite)
