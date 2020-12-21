@@ -52,6 +52,10 @@
       &.hide {
         display: none;
       }
+
+      &:nth-child(odd) {
+        background-color: color(graylight);
+      }
     }
   }
 
