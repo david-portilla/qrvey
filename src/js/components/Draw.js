@@ -39,28 +39,14 @@ class Draw {
   init () {
     this.groupByRegion()
     this.addDataToDOM().then(res => {
-      // let createDialog = new Dialog({items: res})
-      // let getDialogEl = select(".c-dialog")
-      /* eslint-disable-next-line */
+      /* eslint-disable */
       const dialog = new Dialog({
         elems: res,
         dialogEl: 'c-dialog',
         overlayEl: 'c-dialog__overlay'
       })
-      /* eslint-disable-next-line */
       const searchBar = new Search()
-      // let getCountryBtns = selectAll(".js-open-dialog");
-      // // console.log(getDialogEl)
-      // // console.log(getCountryBtns)
-      // let getAllDialogEls = selectAll(".c-dialog");
-      // Array.prototype.forEach.call(getAllDialogEls, function(dialogEl, i) {
-      //   // getAllDialogEls.forEach((dialogEl,i) => {
-      //   const EachDialog = new Dialog({
-      //     dialogEl: "c-dialog",
-      //     overlayEl: "c-dialog__overlay"
-      //   });
-      //   EachDialog.addEventListeners(".js-open-dialog", ".js-close-dialog");
-      // })
+      /* eslint-eneable */
     })
   }
 
