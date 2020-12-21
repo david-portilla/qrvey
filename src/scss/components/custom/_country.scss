@@ -25,6 +25,10 @@
     flex-direction: column;
     margin-bottom: 2rem;
     width: 100%;
+
+    @include myBreakpoints(md) {
+      margin: 0;
+    }
   }
 
   &__heading {
@@ -32,8 +36,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 
-    @include myBreakpoints(xs) {
+    @include myBreakpoints(sm) {
+      align-items: flex-start;
       flex-wrap: nowrap;
       justify-content: flex-start;
     }
@@ -41,6 +47,7 @@
     &-title {
       color: color(black);
       display: flex;
+      line-height: 1.3;
     }
 
     &-favorite {
@@ -48,7 +55,9 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      flex: 0 0 10%;
       margin-left: 0.5rem;
+      margin-top: 0.5rem;
       padding: 0.5rem;
 
       > i {
