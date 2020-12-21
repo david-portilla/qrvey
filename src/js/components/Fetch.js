@@ -20,8 +20,10 @@ class Fetch {
 * Initialize method
 */
   init () {
-    this.fetchItem('all')
+    /* eslint-disable */
+    this.fetchItem('all').then(res => {let sendData = new Draw({data: res})})
     this.showLoading(true)
+    /* eslint-eneable */
   }
 
   /**
@@ -41,12 +43,12 @@ class Fetch {
       const response = await fetch(url, params)
       if (response.ok) {
         const data = await response.json()
-
         if (data) {
           this.showLoading(false)
-          /* eslint-disable-next-line */
-          let sendData = new Draw({data})
+          return data
         }
+      } else {
+        console.log('Server Error', response)
       }
     } catch (error) {
       console.log('Fetch Item Failed: ', error.message)
