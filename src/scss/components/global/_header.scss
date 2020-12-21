@@ -35,6 +35,7 @@
 
   &__search {
     max-width: 70rem;
+    position: relative;
     width: 100%;
 
     > input[type='text'] {
@@ -47,6 +48,25 @@
 
       &::placeholder {
         color: color(gray);
+      }
+    }
+
+    &-btn {
+      -webkit-appearance: none;
+      // cursor: pointer;
+      // pointer-events: none;
+
+      background-color: transparent;
+      border: none;
+      padding: 0.7rem;
+      position: absolute;
+      right: 0.2rem;
+      top: 0.2rem;
+      z-index: 2;
+
+      i {
+        color: color(gray);
+        opacity: 0.5;
       }
     }
   }
