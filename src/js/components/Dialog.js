@@ -1,8 +1,16 @@
 import {select, selectId} from '../helpers'
+
+/**
+* Draw data component
+* @author David Portilla <david_portilla@hotmail.com>
+*/
 class Dialog {
   /**
-* Constructor method
-*/
+  * Constructor method
+  * @param {Nodelist} elems list of countries
+  * @param {String} dialogEl dialog class handler
+  * @param {String} dialogEl overlay class handler
+  */
   constructor ({elems, dialogEl, overlayEl}) {
     this.dialogEls = elems
     this.dialogEl = select(`.${ dialogEl }`)
@@ -61,6 +69,9 @@ class Dialog {
     })
   }
 
+  /**
+* Function to open Dialog modal
+*/
   open () {
     // console.log('open()')
     select('body').classList.add('u-noscroll')
@@ -78,6 +89,9 @@ class Dialog {
     })
   }
 
+  /**
+* Function to close Dialog modal
+*/
   close () {
     // console.log('close()')
     select('body').classList.remove('u-noscroll')
@@ -87,6 +101,10 @@ class Dialog {
     this.focusedElBeforeOpen.focus()
   }
 
+  /**
+* Add information to modal
+* @param {Object} obj the Object with the information
+*/
   setInfo (obj) {
     this.cname.innerHTML = obj.dataset.name
     this.cregion.innerHTML = obj.dataset.region
@@ -106,6 +124,10 @@ class Dialog {
     this.ccountryFavorite.dataset.favorite = `${ obj.dataset.name }`
   }
 
+  /**
+* Add information to modal
+* @param {Button} btn the button to handle the favorite options
+*/
   setFavorite (btn) {
     /* eslint-disable */
     let isFavorite = localStorage.getItem(btn.dataset.favorite)
@@ -120,6 +142,10 @@ class Dialog {
     /* eslint-eneable */
   }
 
+  /**
+* Handle key down events
+* @param {Object} e the event Object
+*/
   handleKeyDown (e) {
     const tab = 'Tab' || 9
     const esc = 'Escape' || 'Esc' || 27
@@ -149,6 +175,10 @@ class Dialog {
     }
   }
 
+  /**
+* Handle Backward Tab event
+* @param {Object} e the event Object
+*/
   handleBackwardTab (e) {
     if (document.activeElement === this.firstFocusableEl) {
       e.preventDefault()
@@ -156,6 +186,10 @@ class Dialog {
     }
   }
 
+  /**
+* Handle Forward  Tab event
+* @param {Object} e the event Object
+*/
   handleForwardTab (e) {
     if (document.activeElement === this.lastFocusableEl) {
       e.preventDefault()
