@@ -233,24 +233,6 @@ class Draw {
     }
     return countries
   }
-
-  /**
-* @todo Implement this function.
- * @todo Get the full name of border countries.
- */
-  // async getLimitNames (id) {
-  //   const url = `https://restcountries.eu/rest/v2/alpha/${ id }/`;
-  //   let countryName = ''
-  //   try {
-  //     let ccObjt = await fetch(url)
-  //     let resName = await ccObjt.json()
-  //     countryName = resName.name
-  //     console.log(countryName)
-  //   } catch (error) {
-  //     console.log("Fetch Related countri Name Failed: ", error.message);
-  //   }
-  //   return countryName;
-  // }
 }
 
 export default Draw
