@@ -1,0 +1,524 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,900&display=swap);
+@charset "UTF-8";
+/*
+* Tools:
+* Globally used mixins and functions. It’s important not to output any CSS in
+* the first 2 layers.
+*/
+/**
+ * Tools
+ */
+/**
+ * Break points
+ */
+/*
+* Objects:
+* Class-based selectors which define undecorated design patterns, for example
+* media object known from OOCSS
+*/
+/**
+ * Objects
+ */
+.o-container {
+  margin: 0 auto;
+  padding: 0 1.6rem; }
+  @media (min-width: 62em) {
+    .o-container {
+      max-width: 120rem;
+      padding: 0 3.2rem; } }
+  @media (min-width: 80em) {
+    .o-container {
+      max-width: 140rem; } }
+
+/*
+* Settings:
+* Used with preprocessors and contain font, colors definitions, etc.
+*/
+/**
+ * Settings
+ */
+/*
+* Colors
+* Define colors in the $color map, and grab them using the function
+* i.e. background-color: color(yellow);
+*/
+/*
+* Generic:
+* reset and/or normalize styles, box-sizing definition, etc. This is the first
+* layer which generates actual CSS.
+*/
+/**
+ * Generic
+ */
+* {
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0; }
+  *:focus {
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0.5rem 0 rgba(255, 255, 0, 0.5);
+    outline: #ffca00 auto 0.5rem; }
+
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
+body {
+  color: #373737;
+  display: flex;
+  flex-direction: column;
+  font: 400 1.6rem/2 Arial, Helvetica, sans-serif;
+  height: 100%;
+  letter-spacing: 0.03rem;
+  letter-spacing: 0.025rem; }
+
+main {
+  flex: 1 0 auto; }
+
+img {
+  display: block; }
+
+a {
+  color: #373737;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.025rem;
+  line-height: 1.75;
+  text-decoration: underline;
+  transition: all linear 0.25s; }
+  a:hover, a:focus {
+    color: #4fbdff;
+    text-decoration: underline;
+    transition: all linear 0.25s; }
+
+/*
+* Utilities:
+* Utilities and helper classes with ability to override anything which goes
+* before in the triangle, eg. hide helper class
+*/
+/**
+ * Utilities
+ */
+.u-bgimg-contain-ctr {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.u-bgimg-cover-ctr {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.u-noscroll {
+  height: 100%;
+  overflow: hidden; }
+
+.u-sronly {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0.1rem;
+  margin: -0.1rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.1rem;
+  z-index: -99999; }
+
+.c-header, .c-header__favorites, .c-dialog__container, .c-country__flag {
+  box-shadow: 0.2rem 0.2rem 2rem 0 rgba(66, 127, 164, 0.22); }
+
+.u-shadow-one {
+  box-shadow: 0.2rem 0.2rem 2rem 0 rgba(66, 127, 164, 0.22); }
+
+.u-shadow-one {
+  box-shadow: 0.2rem 0.2rem 2rem 0 rgba(66, 127, 164, 0.22); }
+
+/*
+* Components:
+* specific UI components. This is where majority of our work takes place and
+* our UI components are often composed of Objects and Components
+*/
+/**
+ * Global Components
+ */
+/**
+ * Header Component
+ */
+.c-header {
+  background-color: #4c3666;
+  padding: 2rem 0;
+  position: fixed;
+  transition: all linear 0.25s;
+  width: 100%;
+  z-index: 5; }
+  @media (min-width: 62em) {
+    .c-header {
+      padding: 3rem 0; } }
+  .c-header + main {
+    overflow: hidden;
+    padding-top: 12.2rem; }
+    @media (min-width: 62em) {
+      .c-header + main {
+        padding-top: 16.2rem; } }
+  .c-header__title {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 0; }
+  .c-header__search {
+    margin-bottom: 1rem;
+    max-width: 70rem;
+    position: relative;
+    width: 100%; }
+    .c-header__search > input[type='text'] {
+      border: none;
+      border-radius: 0.2rem;
+      color: #666;
+      padding: 0.4rem 0.8rem;
+      padding: 0.8rem;
+      width: 100%; }
+      .c-header__search > input[type='text']::placeholder {
+        color: #666; }
+    .c-header__search-btn {
+      -webkit-appearance: none;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      padding: 0.7rem;
+      position: absolute;
+      right: 0.2rem;
+      top: 0.2rem;
+      z-index: 2; }
+      .c-header__search-btn i {
+        color: #666;
+        opacity: 0.5; }
+  .c-header__favorites {
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    color: #4c3666;
+    cursor: pointer;
+    display: none;
+    font-weight: 900;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    transition: all linear 0.25s; }
+    .c-header__favorites:hover {
+      background-color: #f2f2f2;
+      transition: all linear 0.25s; }
+      .c-header__favorites:hover > i {
+        color: #4c3666;
+        transition: all linear 0.25s; }
+    .c-header__favorites.show {
+      display: flex;
+      flex-direction: row; }
+    .c-header__favorites.is-active {
+      background-color: #4c3666;
+      color: #fff;
+      outline: 0.2rem solid #ffca00; }
+      .c-header__favorites.is-active:hover {
+        color: #fff; }
+        .c-header__favorites.is-active:hover > i {
+          color: #fff; }
+    .c-header__favorites > i {
+      color: #ffca00;
+      margin-left: 0.5rem;
+      transition: all linear 0.25s; }
+
+/**
+ * Footer Component
+ */
+.c-footer {
+  background-color: #373737;
+  color: #fff;
+  padding: 0.5rem 0;
+  text-align: center; }
+  .c-footer a {
+    color: #fff; }
+
+/**
+ * Skip to main Navigation Component
+ */
+.c-skiplink {
+  background-color: #373737;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%; }
+  @media (min-width: 62em) {
+    .c-skiplink {
+      display: inline-block;
+      height: 0.1rem;
+      left: -1000rem;
+      position: absolute;
+      top: auto;
+      width: 0.1rem; } }
+  @media (min-width: 62em) {
+    .c-skiplink:not(:focus):not(:active) {
+      top: -6rem; } }
+  .c-skiplink:focus, .c-skiplink:active, .c-skiplink.is-focused {
+    background-color: #373737;
+    border: 0.2rem inset #fff;
+    color: #fff;
+    display: block;
+    height: auto;
+    margin: 0.2rem;
+    text-decoration: underline;
+    width: auto;
+    z-index: 9999; }
+    @media (min-width: 62em) {
+      .c-skiplink:focus, .c-skiplink:active, .c-skiplink.is-focused {
+        left: 0.3rem;
+        position: absolute;
+        top: 0.3rem;
+        transition: top 0.2s linear; } }
+
+/**
+ * Custom Components
+ */
+/**
+ * Dialog Component
+ */
+.c-dialog {
+  background-color: transparent;
+  margin: 0;
+  padding: 2rem;
+  position: absolute;
+  top: 25rem;
+  width: 100%;
+  z-index: 6; }
+  .c-dialog[aria-hidden='true'] {
+    display: none; }
+  @media (min-width: 62em) {
+    .c-dialog {
+      left: calc(50% - 40rem);
+      max-width: 80rem; } }
+  .c-dialog[aria-hidden='false'] {
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+  .c-dialog__container {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 4rem;
+    width: 100%; }
+    @media (min-width: 30em) {
+      .c-dialog__container {
+        padding: 6rem; } }
+  .c-dialog__overlay {
+    background-color: rgba(76, 54, 102, 0.35);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 5; }
+    .c-dialog__overlay[aria-hidden='true'] {
+      display: none; }
+  .c-dialog__close {
+    align-items: center;
+    background-color: #4c3666;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 4rem;
+    justify-content: center;
+    padding: 0.5rem;
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    transition: all linear 0.25s;
+    width: 4rem; }
+    .c-dialog__close:hover, .c-dialog__close:focus {
+      background-color: #4c3666;
+      color: #fff; }
+
+/**
+ * Country Component
+ */
+.c-country {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  @media (min-width: 30em) {
+    .c-country {
+      flex-wrap: nowrap; } }
+  .c-country__flag {
+    flex: 0 0 15rem;
+    height: 10rem; }
+  .c-country__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    width: 100%; }
+    @media (min-width: 62em) {
+      .c-country__info {
+        margin: 0; } }
+  .c-country__heading {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem; }
+    @media (min-width: 48em) {
+      .c-country__heading {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        justify-content: flex-start; } }
+    .c-country__heading-title {
+      color: #373737;
+      display: flex;
+      line-height: 1.3;
+      max-width: 40rem; }
+    .c-country__heading-favorite {
+      -webkit-appearance: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      flex: 0 0 10%;
+      margin-left: 0.5rem;
+      margin-top: 0.5rem;
+      padding: 0.5rem; }
+      .c-country__heading-favorite > i {
+        color: gray;
+        font-size: 2rem;
+        transition: all linear 0.25s; }
+      .c-country__heading-favorite:hover > i, .c-country__heading-favorite:focus > i {
+        color: #4c3666;
+        font-size: 2.2rem;
+        transition: all linear 0.25s; }
+      .c-country__heading-favorite.is-favorite > i {
+        color: #ffca00; }
+  .c-country__list {
+    list-style: none; }
+    .c-country__list > li {
+      margin-bottom: 0.5rem; }
+  .c-country__text {
+    font-weight: 900;
+    line-height: 1.2; }
+    .c-country__text span {
+      font-weight: 400; }
+    .c-country__text .bold {
+      font-weight: 900; }
+
+/**
+ * List Component
+ */
+.c-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  position: relative; }
+  @media (min-width: 62em) {
+    .c-list {
+      margin-top: 4rem; } }
+  .c-list__col {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding-right: 1.6rem; }
+    .c-list__col:last-of-type {
+      margin-bottom: 0; }
+    @media (min-width: 30em) {
+      .c-list__col {
+        flex: 0 0 calc(50% - 1.6rem); } }
+    @media (min-width: 62em) {
+      .c-list__col {
+        flex: 0 0 calc(20% - 1.6rem); } }
+  .c-list__region {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem; }
+    @media (min-width: 62em) {
+      .c-list__region {
+        margin-bottom: 2rem; } }
+  .c-list__countries {
+    list-style: none; }
+    .c-list__countries.is-empty > li.is-empty {
+      display: block; }
+    .c-list__countries li {
+      margin-bottom: 0.5rem; }
+      .c-list__countries li:nth-child(odd) {
+        background-color: #f2f2f2; }
+      .c-list__countries li.hide {
+        display: none; }
+      .c-list__countries li.is-empty {
+        background-color: #f2f2f2;
+        display: none;
+        font-style: italic;
+        padding: 0 0.5rem; }
+  .c-list__item {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.4rem 0;
+    text-decoration: none;
+    width: 100%; }
+    .c-list__item:hover, .c-list__item:focus {
+      background-color: #4c3666;
+      color: #fff; }
+      .c-list__item:hover-name, .c-list__item:focus-name {
+        color: #fff; }
+      .c-list__item:hover.js-open-dialog span, .c-list__item:focus.js-open-dialog span {
+        color: #fff; }
+    .c-list__item-flag {
+      background-color: #666;
+      flex: 0 0 3.6rem;
+      height: 2.4rem;
+      margin-right: 0.6rem; }
+    .c-list__item-name {
+      background-color: #f2f2f2;
+      color: #f2f2f2;
+      width: 100%; }
+    .c-list__item.js-open-dialog span {
+      background-color: transparent;
+      color: #373737; }
+
+/*
+* Loading component
+*/
+.c-loading {
+  bottom: 50%;
+  display: flex;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in;
+  z-index: 100; }
+  .c-loading.show {
+    opacity: 1; }
+  .c-loading__ball {
+    animation: jump 0.5s ease-in infinite;
+    background-color: rgba(55, 55, 55, 0.8);
+    border-radius: 50%;
+    height: 1rem;
+    margin: 0.5rem;
+    width: 1rem; }
+    .c-loading__ball:nth-of-type(2) {
+      animation-delay: 0.1s; }
+    .c-loading__ball:nth-of-type(3) {
+      animation-delay: 0.2s; }
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-1rem); } }
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qrvey | FE test</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="icon" href="favicon.svg"><link href="index.css" rel="stylesheet"></head>
+
+<body>
+  <a href="#main-content" class="c-skiplink">Skip to main content</a>
+
+  <header role="banner" class="c-header">
+    <div class="o-container">
+      <h1 class="c-header__title">Qrvey FE test</h1>
+      <div class="c-header__search">
+        <label for="country" class="u-sronly">Search for country by name</label>
+        <input type="text" name="name" id="get-country" placeholder="Search">
+        <span id="submitBtn" class="c-header__search-btn">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+
+      <button id="show-favorites" class="c-header__favorites">
+        <span>Show only</span>
+        <i class="fas fa-star"></i>
+      </button>
+    </div>
+  </header>
+  <!-- c-header -->
+
+  <main id="main-content">
+    <div class="o-container">
+      <section id="listContainer" class="c-list">
+
+        <div class="c-list__col">
+          <div class="c-list__region">
+            Africa
+          </div>
+          <ol class="c-list__countries" id="africa">
+            <li>
+              <a href="#" class="c-list__item">
+                <div class="c-list__item-flag u-bgimg-cover-ctr"
+                  style="background-image: url(https://picsum.photos/800/600)">
+                </div>
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <div class="c-list__item-flag u-bgimg-cover-ctr"
+                  style="background-image: url(https://picsum.photos/500/600)">
+                </div>
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <div class="c-list__item-flag u-bgimg-cover-ctr"
+                  style="background-image: url(https://picsum.photos/800/900)">
+                </div>
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <div class="c-list__item-flag u-bgimg-cover-ctr"
+                  style="background-image: url(https://picsum.photos/500/900)">
+                </div>
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="c-list__col">
+          <div class="c-list__region">
+            America
+          </div>
+          <ol class="c-list__countries" id="americas">
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Colombia</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="c-list__col">
+          <div class="c-list__region">
+            Asia
+          </div>
+          <ol class="c-list__countries" id="asia">
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="c-list__col">
+          <div class="c-list__region">
+            Europa
+          </div>
+          <ol class="c-list__countries" id="europe">
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="c-list__col">
+          <div class="c-list__region">
+            Oceania
+          </div>
+          <ol class="c-list__countries" id="oceania">
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="c-list__item">
+                <img src="https://picsum.photos/300/300" alt="" class="c-list__item-flag">
+                <span class="c-list__item-name">Country</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+
+        <div id="loading" class="c-loading">
+          <div class="c-loading__ball"></div>
+          <div class="c-loading__ball"></div>
+          <div class="c-loading__ball"></div>
+        </div>
+
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="c-footer">
+    <div class="o-container">
+      <p>by <a href="https://davidportilla.com/" target="_blank">David Portilla</a> 20/12/2020</p>
+    </div>
+  </footer>
+
+  <div class="c-dialog" role="dialog" aria-hidden="true" aria-labelledby="dialog-title"
+    aria-describedby="dialog-description">
+
+    <p id="dialog-description" class="sr-only">Information about the Country</p>
+
+    <div class="c-dialog__container">
+      <button type="button" class="c-dialog__close js-close-dialog" aria-label="Close Navigation"
+        class="c-dialog__close">
+        <i class="fa fa-times"></i>
+      </button>
+
+      <div class="c-country">
+        <div class="c-country__info">
+
+          <div class="c-country__heading">
+            <h1 id="country-name" class="c-country__heading-title">Colombia</h1>
+            <button type="button" id="country-favorite" data-favorite="country-name"
+              class="c-country__heading-favorite js-set-favorite" class="c-dialog__favorite">
+              <i class="fas fa-star"></i>
+              <span class="u-sronly">Save this country as a favorite</span>
+            </button>
+          </div>
+
+          <ul class="c-country__list">
+            <li>
+              <p class="c-country__text">Region:
+                <span id="country-region">America</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Population:
+                <span id="country-population">50M</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Capital:
+                <span id="country-capital">Bogota</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Currency:
+                <span id="country-currency">Peso Colombiano</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Language:
+                <span id="country-language">Espanol</span>
+              </p>
+            </li>
+            <li>
+              <p class="c-country__text">Border Countries:
+                <span id="country-border" class="bold">Brasil, Ecuador, Panama, Peru,etc</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div id="country-flag" class="c-country__flag u-bgimg-cover-ctr"
+          style="background-image: url(https://picsum.photos/300/300)">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="c-dialog__overlay" tabindex="-1" aria-hidden="true"></div>
+
+<script src="index.js"></script></body>
+
+</html>
