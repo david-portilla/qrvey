@@ -13,6 +13,7 @@ class Search {
     this.favoriteBtn = selectId('show-favorites')
     this.listItems = selectAll('.c-list__item')
     this.listCountries = selectAll('.c-list__countries')
+    /* eslint-disable-next-line */
     this.storedItems = {...localStorage};
     // bind methods
     this.init = this.init.bind(this)
@@ -73,6 +74,7 @@ class Search {
 * Verify if favorites were set previously
 */
   checkIfFavorite () {
+    /* eslint-disable */
     if (Object.keys(localStorage).length > 1) {
       Object.keys(localStorage).forEach(id => {
         if (id === 'Qrvey') {
@@ -80,6 +82,7 @@ class Search {
         }
       })
     }
+    /* eslint-eneable */
   }
 
   /**
