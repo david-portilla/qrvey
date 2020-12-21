@@ -113,12 +113,12 @@ class Dialog {
     this.ccurrency.innerHTML = obj.dataset.currency
     this.clanguage.innerHTML = obj.dataset.languages
     if (obj.dataset.borders.trim() !== 'undefined') {
-      this.cborder.innerHTML = obj.dataset.borders
-      // TODO
-      // Fetch long name
-      this.getCountryNames(obj.dataset.borders)
+      this.cborder.innerHTML = 'loading border countries..'
+      this.getCountryNames(obj.dataset.borders).then(res => {
+        this.cborder.innerHTML = res
+      })
     } else {
-      this.cborder.innerHTML = 'no border countries'
+      this.cborder.innerHTML = 'No border countries found'
     }
     this.cflag.style.backgroundImage = `url(${ obj.dataset.flag })`
     this.ccountryFavorite.dataset.favorite = `${ obj.dataset.name }`
@@ -198,11 +198,35 @@ class Dialog {
   }
 
   /**
-* @todo Implement this function.
-* @todo Get the full name of border countries.
+* Handle Forward  Tab event
+* @param {string} str str
 */
   async getCountryNames (str) {
-    console.log('getnames', str.split(','))
+    let cname = str.split(', ')
+    let res = ''
+    try {
+      const params = {
+        method: 'GET',
+        mode: 'cors'
+      }
+      for (let h = 0;h < cname.length;h++) {
+        const response = await fetch(`https://restcountries.eu/rest/v2/alpha/${ cname[h] }/`, params)
+        if (response.ok) {
+          const data = await response.json()
+          h < cname.length - 1 ? res += `${ data.name }, ` : res += `${ data.name }`
+          // if (h < cname.length - 1) {
+          //   res += `${ data.name }, `
+          // } else {
+          //   res += `${ data.name }`
+          // }
+        } else {
+          res = 'Server Error'
+        }
+      }
+      return res
+    } catch (error) {
+      console.log('Fetch Country Name Failed: ', error.message)
+    }
   }
 }
 
