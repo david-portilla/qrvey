@@ -36,6 +36,6 @@ We need to build an app where the countries of the world can be listed from the 
 
 ## Features
 
-- [x] Vanilla Javascript Slider
+- [x] Vanilla Javascript
 - [x] Full Responsive
 - [x] Webpack, Babel
