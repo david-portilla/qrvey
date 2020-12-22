@@ -5,7 +5,7 @@
 
 We need to build an app where the countries of the world can be listed from the provided endpoint and the detail of the country could be shown when clicked on it, for this we're gonna have the following requirements:
 
-<img src=".github/Nike-Zoom.jpg">
+<img src=".github/Qrvey.jpg">
 </div>
 
 ## ⚙️ Available Scripts
