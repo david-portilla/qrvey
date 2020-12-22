@@ -1,4 +1,4 @@
-# Qrvey Frontend Test
+
 
 <div align="center">
 <h1> REST Countries 🤓 🏡 🌎 </h1>
@@ -16,6 +16,7 @@ In the project directory, you can run:
 - `npm install`
 - `npm run dev`
 
+# Qrvey Frontend Test
 ## Backlog
 
 - All countries must be listed
@@ -26,7 +27,7 @@ In the project directory, you can run:
 - The details must have the country name, region, population, the capital, currency, language, border countries (full name), flag
 - We can add favorite countries, and this should be visible on the country name
 
-# Nice to have
+## Nice to have
 
 - Save favorites using any frontend database
 - Handmade components (Only can use an icon font)
